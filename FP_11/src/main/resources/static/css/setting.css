@@ -1,0 +1,677 @@
+@charset "UTF-8";
+
+a{color: inherit; text-decoration: none; cursor: pointer;}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky; /* 스크롤 시 헤더 고정 */
+    top: 0; /* 화면 상단에 고정 */
+    z-index: 1000; /* 다른 요소들이 헤더 뒤로 가도록 설정 */
+    padding-bottom: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li:nth-child(2) {
+    margin-top: 4px;
+}
+
+
+.sign_in {
+    cursor: pointer;
+    background: linear-gradient(134deg, #ff9a9e 54.07%, #fad0c4 99.24%);
+    border-radius: 100px;
+    border: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 18px;
+    padding: 8px 20px 10px 22px;
+    margin-right: 4px;
+    width: auto; /* 너비를 자동으로 설정 */
+    min-width: 95px; /* 최소 너비를 설정 */
+}
+
+
+#logo img {
+    width: 10%;  /* 부모 요소의 너비에 맞게 확장 */
+    position: relative;
+    height: 10%;  /* 부모 요소의 높이에 맞게 확장 */
+    margin-left: 20px;
+    top: -8px;
+    object-fit: contain; /* 이미지 비율을 유지하며 꽉 차게 */
+}
+
+
+.fa-solid, .fa-regular{
+	font-size: 30px;
+	padding-right: 20px;
+}
+.fa-cart-shopping {
+	position: relative;
+	top: 3px;
+    font-size: 25px;
+    color: #FFCCCC;
+    padding-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li:nth-last-child(3) {
+  border-right: 1px solid #ccc; /* 회색 실선 */
+  padding-right: 15px; /* 아이콘과 선 사이에 여백 추가 */
+  margin-right: 15px; /* 아이콘들 간의 여백 */
+  position: relative;
+}
+
+/* 회색 동그라미 효과 */
+nav ul li a {
+    position: relative; /* 가상 요소를 위해 상대적 위치 설정 */
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 38%;
+    left: 31%;
+    width: 60px;  /* 동그라미 크기 */
+    height: 60px;
+    background-color: rgba(204, 204, 204, 0.2);  /* 회색 동그라미, 투명도 20% */
+    border-radius: 50%;  /* 예쁜 동그라미 모양 */
+    transform: translate(-50%, -50%);  /* 중앙 정렬 */
+    opacity: 0;  /* 기본적으로 숨겨놓기 */
+    transition: opacity 0.3s ease;  /* 부드럽게 나타나게 하기 */
+}
+/* 첫 번째 아이콘 */
+nav ul li:nth-child(1) a::before,
+nav ul li:nth-child(3) a::before,
+nav ul li:nth-child(4) a::before {
+    top: 31%;  /* 첫 번째 아이콘의 위치 */
+    left: 29%;  /* 첫 번째 아이콘의 위치 */
+}
+
+/* 두 번째 아이콘 */
+nav ul li:nth-child(2) a::before {
+    top: -28%;  /* 두 번째 아이콘의 위치 */
+    left: 31%;  /* 두 번째 아이콘의 위치 */
+}
+
+	
+
+/* 호버 시 동그라미 나타나기 */
+nav ul li a:hover::before {
+    opacity: 1;  /* 마우스를 올리면 동그라미가 보이게 */
+}
+
+/* sign_in 버튼은 동그라미 효과를 제외 */
+.sign_in:hover {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* .no-hover 클래스가 있을 때, nav ul li a::before의 hover 효과를 비활성화 */
+.no-hover:hover::before {
+    content: none; /* hover 시에 가상 요소를 제거하거나 비활성화 */
+}
+
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* 배너 */
+.banner {
+    display: flex;
+    width: 30%;
+    border-radius: 12px; /* 환경설정과 같은 둥근 모서리 */
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(134deg, #ff9a9e 54.07%, #fad0c4 99.24%);
+    color: white;
+    font-size: 18px;
+    z-index: 2; /* 환경설정 뒤로 배치 */
+}
+
+/* 메인 컨테이너 스타일 */
+.main-container {
+    background-color: #F8F9FA; /* 연한 회색 배경 */
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    z-index: 5; /* 환경설정 뒤로 배치 */
+}
+
+/* 설정 섹션 */
+.settings-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 제목 스타일 */
+.settings-container h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* 설정 그룹 */
+.setting-group {
+    margin-bottom: 20px;
+}
+
+.setting-group h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* 드롭다운 스타일 */
+.setting-group select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+}
+
+.goog-te-gadget-simple{
+	width: 96.3%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    font-size: 20px !important;
+}
+
+
+.goog-te-gadget-simple img{
+	display: none;
+}
+
+
+
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0px !important;
+    width: 0px !important;
+    position: absolute !important;
+    top: -9999px !important;  /* 화면 밖으로 이동 */
+}
+
+.skiptranslate {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    position: absolute !important;
+    top: -9999px !important; /* 화면 밖으로 */
+}
+
+/* 토글 스위치 */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+/* 슬라이더 원 */
+.toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* 토글 ON 상태 */
+.toggle-switch input:checked + .slider {
+    background-color: #ff9a9e;
+}
+
+.toggle-switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* 애니메이션을 비활성화하는 클래스 */
+.no-animation .slider {
+    transition: none !important;
+}
+
+.no-animation .slider:before {
+    transition: none !important;
+}
+
+/* 설정 설명 스타일 */
+.setting-group p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* 알림 및 서비스 설정 리스트 */
+.settings-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.settings-container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 양쪽 정렬 */
+    padding-bottom: 10px;
+}
+
+.settings-container ul li a {
+    color: #ff9a9e;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+
+#searchWrapper {
+    display: none; /* 기본적으로 검색창 숨김 */
+    position: absolute; /* 위치를 절대값으로 설정 */
+    top: 50%; /* 화면 가운데 배치 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#searchInput {
+    background-color: #f4f6f8; /* 연한 회색 배경 */
+    border: none; /* 보더 제거 */
+    border-radius: 20px; /* 각을 살짝 둥글게 */
+    padding: 8px 15px; /* 적당한 여백 */
+    font-size: 14px; /* 글자 크기 */
+    width: 200px; /* 너비 설정 */
+    height:30px;
+    outline: none; /* 포커스 시 테두리 없애기 */
+}
+
+#searchInput:focus {
+    background-color: #f4f6f8; /* 포커스 시 배경색 변화 */
+}
+
+/* 하단 */
+footer {
+    background-color: #ddd;
+    padding: 40px 0;
+    font-size: 16px;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-left: 300px; /* 왼쪽 여백 */
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-info {
+    font-size: 10px;
+    color: #8e8e8e;
+    text-align: left; /* 왼쪽 정렬 */
+    line-height: 18px;
+    margin-left: 290px; /* 왼쪽 여백 */
+}
+
+.footer-info p {
+    margin: 5px 0;
+    padding-left: 10px; /* 왼쪽에 간격 추가 */
+}
+
+.footer-info .footer-gap {
+    margin: 0 10px; /* 항목 간 간격 추가 */
+}
+
+@media (max-width: 1024px) {
+    .footer-links,
+    .footer-info {
+        margin-left: 20px; /* 화면 크기에 맞춰 여백을 줄임 */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links,
+    .footer-info {
+        margin-left: 10px; /* 더 작은 화면에서 여백을 더욱 줄임 */
+    }
+}
+
+
+/* 📌 반응형 스타일 */
+@media (max-width: 1024px) {
+    .event-card {
+        width: 100%;
+    }
+    
+    .event-wrapper {
+        gap: 10px;
+    }
+
+    .event {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .event {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .event-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .event-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .merch {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        width: 100%;
+    }
+
+    .slide-btn {
+        display: none;
+    }
+
+    .banner {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .sign_in {
+        font-size: 13px;
+        padding: 6px 16px;
+    }
+}
+
+
+.cart a::before {
+    top: 20% !important; 
+}
+
+.cart img{
+	position: relative;
+	right: 10px;
+	top: -5px;
+	width: 40px;
+}
+.coin a::before {
+    top: -60% !important; 
+    left: 26% !important;
+}
+
+/* 추천 아티스트 */
+.fixed-heart {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden; /* 이미지가 잘리지 않도록 영역 밖으로 벗어나지 않게 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 부드러운 그림자 */
+    background: white;
+}
+
+.fixed-heart img {
+    width: 60%; /* 부모 요소에 맞게 이미지 크기 조정 */
+    height: 60%; /* 부모 요소에 맞게 이미지 크기 조정 */
+    object-fit: cover; /* 이미지 비율 유지하며 영역에 맞추기 */
+}
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* 전체 스크롤바 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤바 트랙 (배경) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* 스크롤바 핸들 (움직이는 부분) */
+::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 10px;
+}
+
+/* 스크롤바 핸들 hover 효과 */
+::-webkit-scrollbar-thumb:hover {
+  background: #898989;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* 모달창 기본 스타일 */
+#messageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 25%;
+    top: 95px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* 모달 컨텐츠 */
+.message-content {
+    background: white;
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 모달 헤더 */
+.message-header {
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+/* 모달 바디 */
+.message-body {
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 0;
+}
+
+/* 링크 스타일 */
+.message-body ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.message-body ul li {
+    flex: 1;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.message-body ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+}
+
+.message-body ul li a:hover {
+    color: #ff9a9e;
+}
+
+/* 알림 내용 스타일 */
+.notification-content {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* 활성화된 내용 표시 */
+.notification-content.active {
+    display: block;
+}
+
+/* 회색 실선 (전체 슬라이드 진행 범위) */
+.progress-bar2 {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #f2f2f2;
+    margin-bottom: 10px;
+}
+
+/* 핑크 실선 (현재 슬라이드 위치) */
+.progress2 {
+    position: absolute;
+    height: 2px;  /* 실선의 높이 */
+    background-color: #ff9a9e;
+    width: 0%;  /* 초기값은 0% */
+    transition: left 0.3s ease, width 0.3s ease; /* 위치와 너비 변경 시 부드럽게 애니메이션 */
+}
+
+.artist-list-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+.artist-list-wrapper {
+    overflow-x: hidden;  /* 가로 스크롤 숨기기 */
+    width: 100%;  /* 화면에 맞게 크기 설정 */
+    cursor: grab;  /* 드래그 커서 */
+}
+
+.artist-list {
+    display: flex;  /* 항목을 가로로 나열 */
+    gap: 20px;
+    list-style: none;
+    padding: 10px !important;
+    margin: 0;
+    white-space: nowrap;  /* 한 줄로 표시 */
+    line-height: 20px;
+}
+
+
+.artist-list-wrapper:active {
+    cursor: grabbing;  /* 드래그 중에는 grabbing 커서 */
+}
+
+.modal-link {
+    user-select: none;  /* 링크 텍스트 드래그 방지 */
+    cursor: pointer;  /* 기본 커서로 설정 */
+}

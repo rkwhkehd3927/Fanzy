@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+body {
+    font-family:'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+      
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    height: 50px;
+}
+
+header .container {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    width: 90px; /* 로고 크기 조정 */
+	height: 45px;
+	background-image: url('/images/tempLogo2.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.artist-name {
+    font-size: 15px;
+    margin-left: 10px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.user-options {
+    display: flex;
+    gap: 15px;
+    margin-right: 30px;
+}
+.user-options span {
+    font-size: 14px;
+    color: black;
+}
+.menu {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.menu ul li {
+    margin: 0 20px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 900px;
+    height: 400px;
+    margin: 30px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.ticket-info {
+    width: 60%;
+    margin: 20px 15px;
+    font-size: 15px;
+}
+.ticket-info h2 {
+  margin-top: 30px;
+}
+.seat-info {
+    display: flex;
+    gap: 10px;
+    font-weight: bold;
+    margin-top: 30px;
+    font-size: 15px;
+}
+.seat-info ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+.use_from {
+  margin-top: 10px;
+}
+.purchase-info {
+    width: 35%;
+    background: #F1F3F5;
+    padding: 15px;
+    border-radius: 8px;
+    height: 372px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.purchase-info p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.purchase-info .trade-method {
+    margin-top: 40px;
+}
+.buy-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #ff9a9e;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.buy-btn:hover {
+    opacity: 90%;
+}
+.gray-text {
+    color: gray;
+    font-size: 13px;
+    margin-top: 40px;
+}
+.highlight {
+    background-color: #D1ECF1;
+    color: #0C5460;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 30px;
+}
+.tabs {
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.tab-menu {
+    display: flex;
+    border-bottom: 2px solid #ddd;
+}
+.tab-menu div {
+    padding: 15px;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    background: #F1F3F5;
+}
+.tab-menu div.active {
+    background: white;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 2px solid white;
+}
+.tab-content {
+    display: none;
+    padding: 20px;
+}
+.tab-content.active {
+    display: block;
+}
+
