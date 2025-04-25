@@ -1,0 +1,174 @@
+@charset "UTF-8";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+	background-color: #f8f8f8;
+}
+.logo {
+	width: 110px; /* 로고 크기 조정 */
+	height: 45px;
+	background-image: url('/images/tempLogo3.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	margin-right: 50px; /* 로고와 select 사이의 간격 */
+}
+.date-select {
+	 width: 300px; /* select 칸의 길이 조정 */
+     height: 30px;
+     margin-left: 50px; /* select와 로고 사이의 간격 */
+     font-size:18px;
+     cursor: pointer;
+}
+
+.popup {
+    width: 1000px; /* 너비 */
+    height: 600px; /* 수정된 높이 */
+    display: flex;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    border-radius: 8px;
+    
+}
+
+.seat-selection {
+/*     width: 100%; */
+	display: flex;
+	justify-content: center;
+    text-align: center;
+    align-items: center; /* 세로 중앙 정렬 */
+    flex-direction: column;
+	flex: 2.5;
+    padding: 20px;
+    position: relative;
+}
+
+.seat-map {
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+/*     gap: 10px; */
+    align-items: center;
+/*     padding-top:15px; */
+    width: 655px;
+    height:480px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    margin:auto;
+    
+}
+
+.floor {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.seat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+/*     height: 200px; */
+/*     gap: 3px; */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+/*     flex-wrap: wrap; */
+/*     gap: 2px; */
+}
+
+.seat {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    font-weight: bold;
+    background-color: #e0e0e0;
+    margin: 3px;
+}
+
+.vip.selected { background-color: red; }
+.r.selected { background-color: purple; }
+.s.selected { background-color: cyan; }
+.a.selected { background-color: navy; color: white; }
+.reserved { background-color: #A9A9A9;}
+    
+
+
+.sidebar {
+    flex: 1;
+    padding: 20px;
+    padding-top: 40px;
+    border-left: 1px solid #e0e0e0;
+}
+
+.sidebar h3 {
+	font-size: 17px;
+}
+
+.sidebar p {
+	font-size: 13px;
+}
+
+.seat-grades, .selected-seats {
+    margin-bottom: 20px;
+}
+
+.selected-seats {
+	height: 70px;
+}
+
+.nextStepBtn {
+	width:100%;
+	height:50px;
+	font-size:15px;
+    padding: 10px 20px;
+    background-color: #ff9a9e;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nextStepBtn:hover {
+    opacity: 90%;
+}
+
+
+
+.reset-button {
+    position: absolute;
+    top: 50px; /* 버튼이 좌석맵의 바깥쪽 우측 상단에 위치하도록 조정 */
+    right: 22px;
+/* 	justify-content: center; */
+/*     align-items: center; */
+/* 	display: flex; */
+	transform: translateY(0);
+    background-color:  #f4f4f4;
+    color: black;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 115px;
+    height: 30px;
+    font-size: 12px;
+}

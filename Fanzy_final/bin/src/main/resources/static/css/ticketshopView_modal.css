@@ -1,0 +1,93 @@
+@charset "UTF-8";
+
+/* 모달 */
+
+.orderModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 150px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    max-height: 80vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-body {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 10px;
+    margin-left: 20px;
+}
+.close {
+    color: #aaa;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 5%;
+    transform: translateY(-50%);
+    background: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.form-group h3 {
+	font-size: 18px;	
+}
+.form-group strong {
+	font-size: 15px;	
+}
+
+
+.orderModal label {
+    display: flex;
+  	gap: 5px;
+  	margin-bottom: 10px;
+}
+
+.form-group #quantity {
+	width: 50px;
+	height: 20px;
+	boder-radius: 10px;
+	margin-left: 5px;
+}
+
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+}
+
+#payButton {
+	width: 100%;
+	height: 45px;
+	margin: 5px 0;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}

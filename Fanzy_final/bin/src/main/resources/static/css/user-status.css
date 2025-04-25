@@ -1,0 +1,331 @@
+@charset "UTF-8";
+
+
+a{color: inherit; text-decoration: none; cursor: pointer;}
+/* 로그인 페이지 스타일 */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4; /* 연한 회색 배경 */
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow: hidden; /* 스크롤 제거 */
+}
+
+
+.login-container {
+    width: 494px;
+    max-height: 700px; /* 최대 높이를 화면에 맞게 제한 */
+    background: linear-gradient(134deg, #ff9a9e 54.07%, #fad0c4 99.24%);
+    border-radius: 16px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    overflow: auto; /* 내용이 넘칠 때 스크롤 */
+}
+
+.login-container h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+
+
+.login-container input {
+    width: 90%; /* input의 크기는 그대로 유지 */
+    padding: 14px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff9a9e;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background: #ff7f7f;
+}
+
+button[type="submit"] {
+    width: 396px; /* 버튼의 가로 크기 */
+    height: 50px; /* 버튼의 세로 크기 */
+    background-color: #ffffff; /* 흰색 배경 */
+    color: #ff9a9e; /* 글자 색상 */
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #ff9a9e; /* 버튼 테두리 색상 */
+    border-radius: 25px; /* 둥근 테두리 */
+    cursor: pointer;
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+    margin-top: 100px; /* 버튼 위쪽 여백 */
+}
+
+.loginFrm{
+	display: flex;               /* 로그인 폼을 flexbox로 설정 */
+    flex-direction: column;      /* 폼의 항목들을 세로로 배치 */
+    align-items: center;         /* 폼 항목들을 가로로 중앙 정렬 */
+}
+
+label {
+    display: block;        /* label을 block 요소로 설정 */
+    text-align: left;      /* 텍스트를 왼쪽 정렬 */
+    width: 90%;
+}
+
+
+button[type="submit"]:hover {
+    background-color: #ffb4b4; /* 호버 시 배경색을 연한 회색으로 변경 */
+    color: white; /* 글자 색상 변경 */
+    border-color: #ff7f7f; /* 테두리 색상 변경 */
+}
+
+button[type="submit"]:active {
+    background-color: #ff7f7f; /* 클릭 시 배경색 */
+    color: white;
+    border-color: #ff4d4d; /* 클릭 시 테두리 색상 */
+}
+
+.social-login {
+    display: flex;
+    justify-content: center; /* 버튼들을 중앙 정렬 */
+    align-items: center;
+    gap: 30px; /* 버튼들 사이에 20px 간격 추가 */
+    margin-top: 50px; /* 실선과 버튼들 간의 간격 */
+}
+
+#logo img {
+    width: auto;
+    height: 100px;
+    object-fit: contain;
+    filter: brightness(0) invert(1); /* 이미지를 흰색으로 바꾸는 효과 */
+    margin-bottom: 20px;
+}
+
+.nextBtn{
+    width: 100%;
+    padding: 14px;
+    background: #ff9a9e;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+    line-height: 20px;
+    margin-top: 20px !important;
+    }
+
+.social-btn {
+    width: 65px;
+    height: 65px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease;
+}
+
+.social-btn.kakao {
+    background-image: url('/images/index_login/kakao.png'); /* 카카오 로고 */
+}
+
+.social-btn.google {
+    background-image: url('/images/index_login/google.png'); /* 구글 로고 */
+}
+
+.social-btn.x {
+    background-image: url('/images/index_login/x.png'); /* x 로고 */
+}
+
+.social-btn:hover {
+    transform: scale(1.1); /* 호버 시 버튼 살짝 커짐 */
+}
+
+.social-btn:active {
+    transform: scale(0.98); /* 클릭 시 버튼 작아짐 */
+}
+
+
+.forgot-container {
+    display: flex; /* 가로 정렬 */
+    justify-content: center; /* 가운데 정렬 */
+    align-items: center; /* 세로 정렬 */
+    gap: 10px; /* 간격 조절 */
+    margin-top: 20px; /* 위쪽 여백 */
+}
+
+.forgot-container img{
+	width: 80%;
+	margin: 0;
+}
+
+.forgot-password {
+    margin: 0; /* 기본 마진 제거 */
+    font-size: 14px;
+    color: #666;
+    cursor: pointer;
+}
+
+.forgot-password:hover {
+    font-weight: 600; /* 글씨체를 두껍게 설정 */
+}
+
+.signup-btn {
+    box-sizing: border-box;
+    padding: 3px 6px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/*---------------------------------------------------------------------------------------------------------------*/
+/* 회원탈퇴 */
+h3{
+	color: white;
+	font-size: 1.5em;
+	text-align: left;
+	padding-right: 350px;
+	line-height: 1em;
+}
+
+
+p{
+	margin: 0;
+}
+
+form{
+	width: 100%;
+}
+
+.warning{
+	margin-top: 20px;
+	color: rgb(255, 56, 68);
+}
+
+/* 회원탈퇴 컨텐츠 */
+.withdrawal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.confirmation {
+	width: 90%; /* input의 크기는 그대로 유지 */
+    padding: 14px;
+    margin: 20px 10px 0px 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    background: rgb(255, 242, 243);
+    color: rgb(255, 56, 68);
+}
+
+/* 경고 박스 스타일 */
+.withdrawal-warning {
+    background-color: #f0f0f0; /* 연한 회색 배경 */
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 150px; /* 내부 스크롤 유지 */
+    overflow-y: auto; /* 내부에서만 스크롤 */
+    text-align: left;
+    width: 90%;
+    flex-shrink: 0; /* 부모 크기 유지 */
+}
+
+/* 버튼과 링크 정렬 */
+.withdrawal-actions {
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.withdraw-btn {
+    width: 100%; /* 가로 길이 맞춤 */
+    height: 20px;
+    background-color: #ff9a9e;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 0 !important;
+    margin-top: 20px !important;
+}
+
+.withdraw-btn:hover {
+    background-color: #ff7f7f;
+}
+
+.withdrawal-actions a {
+    color: white; /* 흰색 글씨만 적용 */
+    text-decoration: none; /* 기본 밑줄 제거 */
+    margin-top: 10px;
+}
+
+.withdrawal-actions a:hover {
+	text-decoration: underline; 
+}
+
+/* ----------------------------------------------------------- */
+/* 구글번역 */
+
+.goog-te-gadget-simple{
+	width: 96.3%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background: white;
+    cursor: pointer;
+    font-size: 20px !important;
+}
+
+
+.goog-te-gadget-simple img{
+	display: none;
+}
+
+
+
+.goog-te-banner-frame {
+    display: none !important;
+    visibility: hidden !important;
+    height: 0px !important;
+    width: 0px !important;
+    position: absolute !important;
+    top: -9999px !important;  /* 화면 밖으로 이동 */
+}
+
+.skiptranslate {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 0 !important;
+    position: absolute !important;
+    top: -9999px !important; /* 화면 밖으로 */
+}

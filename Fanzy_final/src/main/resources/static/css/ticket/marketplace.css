@@ -1,0 +1,719 @@
+@charset "UTF-8";
+
+a{color: inherit; text-decoration: none; cursor: pointer;}
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+/* 헤더 */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    height: 70px;
+}
+
+header, section {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    width: 90px; /* 로고 크기 조정 */
+	height: 45px;
+	background-image: url('/images/tempLogo3.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.artist-name {
+    font-size: 15px;
+    margin-left: 10px;
+}
+.header-left {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+.user-options {
+    display: flex;
+    gap: 15px;
+    margin-right: 30px;
+}
+.user-options span {
+    font-size: 14px;
+    color: black;
+}
+
+
+/* 배너 */
+.banner {
+	width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: linear-gradient(134deg, #ff9a9e 54.07%, #fad0c4 99.24%);
+    color: white;
+    font-size: 18px;
+}
+
+.menu {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.menu ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+.menu ul li {
+    margin: 0 20px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* 티켓 스타일 */
+.ticket-list {
+	width: 60%;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    margin: auto;
+}
+
+.ticket-list h2 {
+    font-size: 28px;
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.ticket-item {
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.ticket-item:hover {
+    background-color: #f0f0f0;
+}
+
+.ticket-item h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ticket-item a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.ticket-item a:hover {
+    color: #2980b9;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ticket-item p {
+    font-size: 16px;
+    color: #555;
+}
+
+.ticket-item .date {
+    font-size: 14px;
+    color: #888;
+    margin-top: 10px;
+    display: block;
+}
+
+/* "new" 텍스트 스타일 */
+.new-badge {
+    color: #ff3844;
+    font-size: 12px;
+    margin-right: 6px;
+    vertical-align: middle; /* 수평 정렬을 맞추기 위해 */
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;  /* 제목과 동일 줄에 위치하도록 설정 */
+    line-height: 1.2; /* 제목과의 수평 정렬을 맞추기 위해 */
+}
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+/* 공지사항 모달창 */
+#noticeModal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* 모바일 화면에서 모달이 너무 붙지 않게 */
+}
+
+.notice-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 80vh; /* 모달 최대 높이 설정 (화면의 80%) */
+    overflow-y: auto; /* 내용이 넘치면 스크롤 허용 */
+    text-align: left;
+}
+
+
+.close-btn {
+    font-size: 30px;
+    color: #aaa;
+    float: right;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 스크롤바 숨기기 */
+.notice-content::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리 */
+}
+.notice-content {
+    -ms-overflow-style: none;  /* IE, 엣지 */
+    scrollbar-width: none;  /* 파이어폭스 */
+}
+
+/* body 스크롤 막기 (모달 켤 때 레이아웃 유지) */
+body.no-scroll {
+    overflow: hidden;
+    position: fixed; /* 화면 고정 */
+    width: 100%; /* 가로 길이 유지 */
+}
+
+header.modal-open {
+    background-color: rgba(204, 204, 204, 0.5); /* 연한 회색 */
+    z-index: 1001; /* 모달보다 우선순위 높게 설정 */
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+
+#searchWrapper {
+    display: none; /* 기본적으로 검색창 숨김 */
+    position: absolute; /* 위치를 절대값으로 설정 */
+    top: 50%; /* 화면 가운데 배치 */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#searchInput {
+    background-color: #f2f2f2; /* 연한 회색 배경 */
+    border: none; /* 보더 제거 */
+    border-radius: 20px; /* 각을 살짝 둥글게 */
+    padding: 8px 15px; /* 적당한 여백 */
+    font-size: 14px; /* 글자 크기 */
+    width: 200px; /* 너비 설정 */
+    height:30px;
+    outline: none; /* 포커스 시 테두리 없애기 */
+}
+
+#searchInput:focus {
+    background-color: #e0e0e0; /* 포커스 시 배경색 변화 */
+}
+
+
+/* 하단 */
+footer {
+	width: 100%;
+    background-color: #ddd;
+    padding: 40px 0;
+    font-size: 16px;
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-left: 300px; /* 왼쪽 여백 */
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #444;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.3s ease;
+}
+
+.footer-info {
+    font-size: 10px;
+    color: #8e8e8e;
+    text-align: left; /* 왼쪽 정렬 */
+    line-height: 18px;
+    margin-left: 290px; /* 왼쪽 여백 */
+}
+
+.footer-info p {
+    margin: 5px 0;
+    padding-left: 10px; /* 왼쪽에 간격 추가 */
+}
+
+.footer-info .footer-gap {
+    margin: 0 10px; /* 항목 간 간격 추가 */
+}
+
+@media (max-width: 1024px) {
+    .footer-links,
+    .footer-info {
+        margin-left: 20px; /* 화면 크기에 맞춰 여백을 줄임 */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-links,
+    .footer-info {
+        margin-left: 10px; /* 더 작은 화면에서 여백을 더욱 줄임 */
+    }
+}
+
+/* 📌 반응형 스타일 */
+@media (max-width: 1024px) {
+    .event-card {
+        width: 100%;
+    }
+    
+    .event-wrapper {
+        gap: 10px;
+    }
+
+    .event {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .event {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .event-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .event-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .merch {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card {
+        width: 100%;
+    }
+
+    .slide-btn {
+        display: none;
+    }
+
+    .banner {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .sign_in {
+        font-size: 13px;
+        padding: 6px 16px;
+    }
+}
+
+
+.cart a::before {
+    top: 30% !important; 
+    left: 31% !important;
+}
+
+/* 추천 아티스트 */
+.fixed-heart {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden; /* 이미지가 잘리지 않도록 영역 밖으로 벗어나지 않게 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 부드러운 그림자 */
+    background: white;
+}
+
+.fixed-heart img {
+    width: 60%; /* 부모 요소에 맞게 이미지 크기 조정 */
+    height: 60%; /* 부모 요소에 맞게 이미지 크기 조정 */
+    object-fit: cover; /* 이미지 비율 유지하며 영역에 맞추기 */
+}
+
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* 전체 스크롤바 */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* 스크롤바 트랙 (배경) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* 스크롤바 핸들 (움직이는 부분) */
+::-webkit-scrollbar-thumb {
+  background: #d8d8d8;
+  border-radius: 10px;
+}
+
+/* 스크롤바 핸들 hover 효과 */
+::-webkit-scrollbar-thumb:hover {
+  background: #898989;
+}
+
+/*------------------------------------------------------------------------------------------------------------*/
+/* 모달창 기본 스타일 */
+#messageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 28%;
+    top: 95px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* 모달 컨텐츠 */
+.message-content {
+    background: white;
+    width: 350px;
+    height: 500px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 모달 헤더 */
+.message-header {
+    padding: 20px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 0;
+}
+
+/* 모달 바디 */
+.message-body {
+    padding: 15px;
+    flex: 1;
+    overflow-y: auto;
+    padding-top: 0;
+}
+
+/* 링크 스타일 */
+.message-body ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.message-body ul li {
+    flex: 1;
+    text-align: center;
+}
+
+.message-body ul li a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+}
+
+.message-body ul li a:hover {
+    color: #ff9a9e;
+}
+
+/* 알림 내용 스타일 */
+.notification-content {
+    display: none;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 20px;
+}
+
+/* 활성화된 내용 표시 */
+.notification-content.active {
+    display: block;
+}
+
+/* 회색 실선 (전체 슬라이드 진행 범위) */
+.progress-bar2 {
+    position: relative;
+    width: 100%;
+    height: 2px;
+    background-color: #f2f2f2;
+    margin-bottom: 10px;
+}
+
+/* 핑크 실선 (현재 슬라이드 위치) */
+.progress2 {
+    position: absolute;
+    height: 2px;  /* 실선의 높이 */
+    background-color: #ff9a9e;
+    width: 0%;  /* 초기값은 0% */
+    transition: left 0.3s ease, width 0.3s ease; /* 위치와 너비 변경 시 부드럽게 애니메이션 */
+}
+
+
+
+
+
+/* 예약 컨테이너 전체 스타일 */
+.reservation-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 사이드바 스타일 */
+/* 사이드바 스타일 */
+.sidebar {
+  width: 250px;
+  background: #f9f9fb; /* 살짝 더 밝은톤으로 변경 */
+  padding: 20px;
+  border-radius: 16px; /* 둥글둥글 MZ 느낌 */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 더 부드러운 그림자 */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+/*   gap: 5px; 요소 간격 넓히기 */
+
+}
+
+.sidebar h2 {
+	font-size: 20px;
+}
+.sidebar h3 {
+	font-size: 16px;
+}
+
+
+/* select 박스 스타일 */
+.sidebar select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* 부드러운 모서리 */
+  appearance: none; /* 기본 셀렉트 디자인 제거 */
+  background: #ffffff url('https://cdn-icons-png.flaticon.com/512/271/271210.png') no-repeat right 16px center; /* 트렌디한 화살표 아이콘 */
+  background-size: 12px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .sidebar select:hover { */
+/*   border-color: #6200ea; 보라색 포인트 */
+/* } */
+
+/* .sidebar select:focus { */
+/*   outline: none; */
+/*   border: 1px solid #6200ea; */
+/*   box-shadow: 0 0 8px rgba(98, 0, 234, 0.3); */
+/* } */
+
+/* 드롭다운 옵션 */
+.sidebar select option {
+  padding: 10px;
+  background: #ffffff;
+  color: #333;
+}
+
+.sidebar select option:hover {
+  background: #f0f0f0;
+}
+
+.sidebar label {
+	margin: 20px 0;
+}
+
+
+
+/* 쿠폰 배너 스타일 */
+.coupon-banner {
+  background: #ffeb3b;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* 티켓 리스트 스타일 */
+.ticket-list {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffff;
+  margin-bottom: 20px;
+  height: 500px;
+  margin-left: 20px;
+}
+.ticket-list .ticket-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.ticket-list .ticket-item:last-child {
+  border-bottom: none;
+}
+
+.ticket-item {
+	height: 50px;
+}
+
+.ticket-info {
+	align-item: center;
+/* 	margin: auto 0;	 */
+}
+
+/* 결제 섹션 스타일 */
+.payment {
+  width: 250px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-method {
+  display: flex;
+/*   justify-content: center; */
+  flex-direction: column;
+  gap: 10px;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.payment-method h2 {
+	font-size: 20px;
+}
+
+
+.payment-options {
+	display: flex;
+	flex-direction: column;
+  	gap: 10px;
+  	margin-bottom: 10px;
+}
+
+/* .payment-method .method { */
+/*   flex: 1 1 calc(50% - 10px); */
+/*   padding: 15px; */
+/*   text-align: center; */
+/*   border: 1px solid #ccc; */
+/*   border-radius: 8px; */
+/*   cursor: pointer; */
+/*   transition: background 0.3s ease; */
+/* } */
+/* .payment-method .method:hover { */
+/*   background: #f0f0f0; */
+/* } */
+/* .payment-method .method.active { */
+/*   background: #6200ea; */
+/*   color: #ffffff; */
+/*   border: 1px solid #6200ea; */
+/* } */
+
+.tradingTicket {
+	height: 30px;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+
+
