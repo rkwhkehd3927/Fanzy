@@ -14,7 +14,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
 **Fanzy** は、ファンとアーティストがつながり、  
 コンテンツを共有し、安全かつ便利にチケットやグッズを購入できるグローバル向けのプラットフォームです。
 
----
+
 
 ## 🌟 Overview
 
@@ -30,7 +30,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
   - AIによるアーティスト推薦
   - 安全な二次取引・不正防止機能
 
----
+
 
 ## 🚀 Key Features
 
@@ -38,21 +38,25 @@ share content, and safely purchase tickets and merchandise through a user-friend
   → Personalised artist and content recommendations for each fan
 - 🔍 **AIによるアーティスト推薦**  
   → Flaskを用いた内部APIでパーソナライズされたアーティスト推薦
+
   
 - 🛡️ **Secure Second-Hand Trading**  
   → Verified ticket/goods transactions with fraud prevention
 - 🛡️ **安全な二次取引**  
   → チケット・グッズの譲渡を本人確認で管理、詐欺防止機能あり  
 
+
 - 🎟️ **QR-based Ticketing**  
   → Supports streaming ticket distribution and seller blocking system
 - 🎟️ **QRコード付きチケット発行**  
   → ストリーミングチケットにも対応、譲渡制限機能付き
 
+
 - 🤖 **AI Chat Filtering**  
   → Real-time filtering of inappropriate content in chat
 - 🤖 **AIチャットフィルター**  
   → チャット上の不適切な発言をリアルタイムで検知・遮断
+
 
 - ✅ **Expected Impact**  
   - Builds a trustworthy trading environment  
@@ -63,7 +67,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
   - ファンとアーティストのエンゲージメント強化  
   - 不正な取引や不適切な投稿の抑制
 
----
+
 
 ## 🛠 Tech Stack
 
@@ -75,7 +79,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
 | **API**       | KakaoPay API, Custom Flask API for artist recommendation |
 | **Others**    | Slack, GitHub, Figma (for collaboration & UI/UX) |
 
----
+
 
 ## 🧩 Development Process
 
@@ -84,7 +88,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
 3. Feature adjustment according to team skill levels  
 4. Internal review for resolving development issues
 
----
+
 
 ## 👩‍💻 My Role – Hyejin Hwang
 
@@ -95,6 +99,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
 - Handled error cases, alerts, and session flow  
 - Designed UI elements (toggle, tab filters, date selector, modals)
 
+
 - チケット予約フローの全体開発（メインページ→座席選択→決済→チケット発行）  
 - 座席情報のAPI設計およびリアルタイム選択UIの実装  
 - QR/ストリーミングチケット対応ロジックの開発  
@@ -102,7 +107,7 @@ share content, and safely purchase tickets and merchandise through a user-friend
 - バリデーション・アラート処理・例外処理の実装  
 - タブ・日付フィルター・モーダルUIなどのデザイン対応
 
----
+
 
 ## 📌 Future Plans
 
